@@ -185,7 +185,7 @@ def run_reconstructor(segments_file, sequence_file):
 if __name__ == '__main__':
 	# Read in arguments
 	if len(sys.argv) < 3:
-		exit("Error parsing input. Usage: \"python sequence_assembler.py <file_with_segments> <file_for_reconstructed_sequence>\"")
+		exit("Error parsing input. Usage: \"python sequence_reconstructor.py <file_with_segments> <file_for_reconstructed_sequence>\"")
 	segments_file = sys.argv[1]
 	sequence_file = sys.argv[2]
 
