@@ -122,7 +122,32 @@ The above method will produce a string containing the reconstructed DNA sequence
 
 \subsection{Running the code}
 
-To run the code, simply open a terminal, navigate to the directory with \texttt{sequence_assembler.py}, and execute the command \texttt{python sequence_assembler.py <file\_with\_segments> <file\_for\_reconstructed\_sequence>} where \texttt{<file\_with\_segments>} is the file containing DNA segments in FASTA format and \texttt{<file_for_reconstructed_sequence} is the file where the reconstructed sequence will be written.
+To run the code, simply open a terminal, navigate to the directory with \texttt{sequence\_assembler.py}, and execute the command
 
-\end{_reconstructed_sequenced is the file where the reconstructeocument}
-file_f be aord ssequence will
+\vspace{5 mm}
+
+\noindent
+\texttt{python sequence\_reconstructor.py <file\_with\_segments> <file\_for\_reconstructed\_sequence>}
+
+\vspace{5 mm}
+
+\noindent
+where \texttt{<file\_with\_segments>} is the file containing DNA segments in FASTA format and \texttt{<file\_for\_reconstructed\_sequence} is the file where the reconstructed sequence will be written.
+
+\subsection{Testing}
+
+To test the sequence reconstructor, execute the command
+
+\vspace{5 mm}
+
+\noindent
+\texttt{python sequence\_reconstructor.py <number\_of\_segments> <segment\_length>}
+
+\vspace{5 mm}
+
+\noindent
+where \texttt{<number\_of\_segments>} is the number of DNA segments to be used in the test (must be at least 2) and \texttt{<segment\_length>} is the length of a DNA segment (must be at least 3).
+
+This will generate a random sequence of DNA with overlaps of at least 50\% between adjacent segments of DNA and will write these segments to a file in FASTA format. It will then call the sequence reconstructor on this file and will compare the output of the sequence reconstructor to the original sequence to see if the reconstructor accurately reconstructed the sequence from the DNA segments.
+
+\end{document}
