@@ -170,20 +170,12 @@ def save_sequence(sequence, filename):
 		sequence_file.write(sequence)
 
 # Run the sequence reconstructor
-def main():
-	# Read in arguments
-	if len(sys.argv) < 3:
-		exit("Error parsing input. Usage: \"python sequence_assembler.py <file_with_segments> <file_for_reconstructed_sequence>\"")
-	segments_file = sys.argv[1]
-	sequence_file = sys.argv[2]
-
+def run_reconstructor(segments_file, sequence_file):
 	# Perform sequence reconstruction
 	segment_dict = read_segments(segments_file)
 	overlap_dict = find_overlaps(segment_dict)
 	sequence = combine_segments(segment_dict, overlap_dict)
 	save_sequence(sequence, sequence_file)
-
-	print "Done!"
 
 
 #--------------------------------------------------------
@@ -191,4 +183,12 @@ def main():
 
 # Main function
 if __name__ == '__main__':
-	main()
+	# Read in arguments
+	if len(sys.argv) < 3:
+		exit("Error parsing input. Usage: \"python sequence_assembler.py <file_with_segments> <file_for_reconstructed_sequence>\"")
+	segments_file = sys.argv[1]
+	sequence_file = sys.argv[2]
+
+	run_reconstructor(segments_file, sequence_file)
+
+	print "Done!"
